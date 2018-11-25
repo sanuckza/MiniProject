@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Myorder</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <h3>My Order</h3>
+    <ion-list>
+        <ion-item-sliding *ngFor="let order of order | async">
+            <ion-item>
+                <ion-thumbnail item-start>
+                    <img src="assets/imgs/icon+.png">
+                </ion-thumbnail>
+                <h2>โต๊ะที่ {{order.table}}</h2>
+                <p>CAKE || Chocolate : {{order.ccake}} | Milk : {{order.mcake}}</p>
+                <p>COFFEE || Amecricano : {{order.amcoffee}} | Esp : {{order.escoffee}}</p>
+                <p>FOOD || Chicken rice : {{order.crfood}}</p>
+                <ion-note>Order ID : {{order.$key}}</ion-note>
+            </ion-item>
+
+            <ion-item-options side="right">
+                <button ion-button color="danger"
+                (click)="editOrder(order.$key,order.table,order.ccake,order.mcake,order.amcoffee,order.escoffee,order.crfood)">
+                    <ion-icon ios="ios-create" md="md-create"></ion-icon>
+                    Edit
+                </button>
+
+                <button ion-button color="dark"
+                (click)="deleteOrder(order.$key)">
+                    <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+                    Delete
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+
+  
+  </ion-content>
+  

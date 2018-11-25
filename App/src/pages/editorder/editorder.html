@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Edit</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <h2>แก้ไขรายการอาหาร</h2>
+
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>โต๊ะที่</ion-label>
+    <ion-input [(ngModel)]="myorder.table"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label fixed>Cake</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Chocolate</ion-label>
+    <ion-input [(ngModel)]="myorder.ccake"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label fixed>Milk</ion-label>
+      <ion-input [(ngModel)]="myorder.mcake"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label fixed>Coffee</ion-label>
+  </ion-item>
+  <ion-item>
+      <ion-label fixed>Amecricano</ion-label>
+      <ion-input [(ngModel)]="myorder.amcoffee"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label fixed>Espresso</ion-label>
+      <ion-input [(ngModel)]="myorder.escoffee"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label fixed>Foods</ion-label>
+  </ion-item>
+  <ion-item>
+      <ion-label fixed>Chicken rice</ion-label>
+      <ion-input [(ngModel)]="myorder.crfood"></ion-input>
+  </ion-item>
+
+
+
+  <ion-item>
+    <button ion-button large color="secondary" (click)="updateOrder(myorder.id, myorder.table, myorder.ccake, myorder.mcake, myorder.amcoffee, myorder.escoffee, myorder.crfood)">
+        <ion-icon name="ios-add-circle-outline" ></ion-icon> Edit Order
+    </button>
+  </ion-item>
+</ion-list>
+
+  </ion-content>
+  
